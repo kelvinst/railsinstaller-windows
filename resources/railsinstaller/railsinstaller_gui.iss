@@ -68,22 +68,35 @@ begin
 
   Page := PageFromID(wpSelectDir);
 
+  WorkspaceLabel := TNewStaticText.Create(Page);
+  WorkspaceLabel.Parent := Page.Surface;
+  WorkspaceLabel.Top := ScaleY(100);
+  WorkspaceLabel.Left := ScaleX(0);
+  WorkspaceLabel.Caption := 'Workspace:';
+
+  WorkspaceEdit := TEdit.Create(Page);
+  WorkspaceEdit.Parent := Page.Surface;
+  WorkspaceEdit.Top := ScaleY(100);
+  WorkspaceEdit.Left := ScaleX(40);
+  GitChkBox.Width := ScaleX(150);
+  WorkspaceEdit.Text := 'C:\Sites';
+
   GitChkBox := TCheckBox.Create(Page);
   GitChkBox.Parent := Page.Surface;
   GitChkBox.State := cbChecked;
   GitChkBox.Caption := 'Install Git (recommended) ';
   GitChkBox.Alignment := taRightJustify;
-  GitChkBox.Top := ScaleY(95);
+  GitChkBox.Top := ScaleY(130);
   GitChkBox.Left := ScaleX(18);
   GitChkBox.Width := Page.SurfaceWidth;
   GitChkBox.Height := ScaleY(17);
-  
+
   PathChkBox := TCheckBox.Create(Page);
   PathChkBox.Parent := Page.Surface;
   PathChkBox.State := cbChecked;
   PathChkBox.Caption := 'Add executables for Ruby, DevKit and Git (if checked above) to the PATH ';
   PathChkBox.Alignment := taRightJustify;
-  PathChkBox.Top := ScaleY(125);
+  PathChkBox.Top := ScaleY(150);
   PathChkBox.Left := ScaleX(18);
   PathChkBox.Width := Page.SurfaceWidth;
   PathChkBox.Height := ScaleY(17);
